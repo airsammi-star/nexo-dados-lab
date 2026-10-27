@@ -11,6 +11,13 @@
 
 ## Registro semanal
 
+### Análise: vantagem de jogar em casa no Brasileirão
+
+- Pergunta: como taxas de vitória, gols e pontos por jogo diferem entre mandantes e visitantes por temporada?
+- Evidência no repositório: `projects/brasileirao/analise_mando_de_campo.sql`.
+- Dúvida que permanece: período coberto e licença precisam ser confirmados nos metadados; a consulta ainda precisa ser executada no BigQuery.
+- Próxima ação: executar a consulta, verificar o número de partidas por temporada e interpretar as diferenças sem atribuir causalidade.
+
 ### Semana 1
 
 - O que estudei:

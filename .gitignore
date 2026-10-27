@@ -11,6 +11,7 @@ data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 *.csv
+*.csv.gz
 *.parquet
 *.xlsx
 *.pkl

@@ -1,0 +1,173 @@
+Metadata-Version: 2.4
+Name: nexo-dados
+Version: 0.1.0
+Summary: Laboratório pessoal de ciência de dados com foco no setor financeiro
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jupyterlab<5,>=4.2
+Requires-Dist: matplotlib<4,>=3.9
+Requires-Dist: numpy<3,>=2.0
+Requires-Dist: pandas<3,>=2.2
+Requires-Dist: scikit-learn<2,>=1.5
+Requires-Dist: seaborn<1,>=0.13
+Requires-Dist: statsmodels<1,>=0.14
+Provides-Extra: dev
+Requires-Dist: pytest<9,>=8.3; extra == "dev"
+Requires-Dist: ruff<1,>=0.7; extra == "dev"
+Dynamic: license-file
+
+# Nexo Dados Lab
+
+Laboratório pessoal de estudos e projetos criado para desenvolver as competências necessárias a uma vaga de ciência de dados no setor financeiro. O repositório combina teoria, exercícios, análises exploratórias, código reutilizável e projetos de portfólio.
+
+## Objetivos
+
+- consolidar Python, SQL, estatística e machine learning;
+- praticar organização, limpeza, exploração e visualização de dados;
+- construir projetos de portfólio com contexto bancário;
+- aprender Git e GitHub durante o desenvolvimento;
+- registrar decisões, aprendizados, limitações e próximos passos;
+- produzir evidências que possam ser apresentadas em currículo e entrevistas.
+
+## Como o repositório está organizado
+
+```text
+nexo-dados-lab/
+├── data/                 dados locais e documentação das fontes
+│   ├── raw/              dados originais, sem alteração
+│   └── processed/        dados tratados ou preparados
+├── docs/                 plano, guias e referências externas
+├── notebooks/            explorações, exercícios e experimentos
+├── projects/             projetos completos de portfólio
+├── src/nexo_dados/       funções Python reutilizáveis
+├── study/                roteiro e diário de aprendizagem
+├── tests/                testes do código reutilizável
+├── .gitignore            regras do que o Git não deve rastrear
+├── AGENTS.md             premissas permanentes para agentes de IA
+├── LICENSE               permissão legal de uso do conteúdo
+├── PROJECT_STATUS.md     situação atual e próxima ação do projeto
+├── pyproject.toml        configuração e dependências Python
+└── README.md             apresentação e instruções principais
+```
+
+### `data`
+
+Guarda os conjuntos de dados usados nas análises. A pasta `raw` recebe o arquivo original; `processed` recebe versões limpas ou transformadas. Os dados em si são ignorados pelo Git para evitar arquivos grandes ou informações indevidas. O arquivo `data/README.md` explica como registrar fonte, licença, data de acesso e limitações.
+
+### `docs`
+
+Centraliza documentos de consulta que valem para todo o laboratório:
+
+- `plano_de_estudo_data_science_itau.docx`: plano inicial de 16 semanas;
+- `GITHUB_GUIDE.md`: Git e GitHub do básico ao intermediário;
+- `PYTHON_DATA_SCIENCE_GUIDE.md`: funções e padrões essenciais de Python para dados;
+- `REFERENCIAS_REPOSITORIOS.md`: catálogo comentado de repositórios públicos para estudo e inspiração.
+
+### `notebooks`
+
+Recebe arquivos Jupyter Notebook (`.ipynb`) usados para aprender, explorar dados, testar hipóteses e construir uma narrativa com texto, código, gráficos e conclusões. Um notebook pode ser pequeno e experimental. Quando uma função passa a ser útil em mais de um notebook, ela deve sair daqui e ir para `src`.
+
+### `projects`
+
+Recebe projetos completos de portfólio. Cada projeto deve ganhar sua própria subpasta apenas quando começar e conter, no mínimo, um README específico, dados ou instruções para obtê-los, análise, código necessário, resultados, limitações e forma de reprodução.
+
+Um projeto normalmente usa um ou mais notebooks. Portanto, `notebooks` e `projects` não são alternativas:
+
+- `notebooks` é o formato de trabalho e experimentação;
+- `projects` é a unidade completa de entrega e apresentação.
+
+Durante um projeto, o notebook pode ficar dentro da pasta do próprio projeto. A pasta `notebooks` da raiz é mais adequada para estudos gerais, exercícios e experimentos que ainda não viraram um projeto de portfólio.
+
+### `src`
+
+`src` é abreviação de *source*, ou código-fonte. Ela guarda funções Python reutilizáveis, separadas dos notebooks. Isso evita copiar a mesma lógica em vários lugares e torna o código mais fácil de testar.
+
+O pacote atual é `src/nexo_dados`. A função `profile_dataframe`, por exemplo, resume tipos, valores ausentes e quantidade de valores únicos de um DataFrame. Um notebook pode importar essa função em vez de reescrevê-la.
+
+### `study`
+
+Organiza o processo de aprendizagem:
+
+- `ROADMAP.md`: sequência inicial de assuntos e entregas;
+- `LEARNING_LOG.md`: diário para registrar estudo, evidência, dúvidas e próxima ação.
+
+### `tests`
+
+Contém testes automatizados para confirmar que as funções de `src` continuam produzindo os resultados esperados. O `pytest` encontra os arquivos desta pasta e executa cenários normais e casos de erro.
+
+## Arquivos da raiz
+
+### `AGENTS.md`
+
+É o manual permanente para agentes de IA que trabalham neste repositório. Ele determina quais arquivos devem ser lidos antes de uma mudança, como tratar dados, onde colocar notebooks e funções, quando atualizar o status e quais ações exigem autorização. Premissas duráveis devem ser registradas nele para não depender apenas da conversa atual.
+
+### `PROJECT_STATUS.md`
+
+É um painel curto do momento atual. Informa o que já existe e qual é a próxima ação concreta. Ele não substitui o diário de estudo nem o histórico do Git.
+
+### `pyproject.toml`
+
+É o arquivo central de configuração do projeto Python. Ele declara:
+
+- nome e versão do pacote;
+- versão mínima do Python;
+- bibliotecas necessárias, como pandas, NumPy e scikit-learn;
+- ferramentas de desenvolvimento, como pytest e Ruff;
+- onde estão o código e os testes;
+- regras básicas de formatação e qualidade.
+
+O comando `python -m pip install -e ".[dev]"` lê esse arquivo e instala o projeto em modo editável com as dependências de desenvolvimento.
+
+### `LICENSE`
+
+Define juridicamente o que outras pessoas podem fazer com o conteúdo. A licença MIT permite usar, copiar, modificar e distribuir o código, desde que o aviso de copyright e a licença sejam preservados. Ela também informa que o software é fornecido sem garantia. A licença dos dados deve ser verificada separadamente.
+
+### `.gitignore`
+
+Informa ao Git quais arquivos não devem ser rastreados. Neste projeto ele exclui o ambiente virtual, caches, credenciais locais, arquivos de dados, modelos treinados e resultados gerados. Isso mantém o repositório leve e reduz o risco de publicar informações indevidas.
+
+O `.gitignore` não apaga arquivos e não afeta arquivos que já foram rastreados. Se um arquivo já entrou no Git, é necessário removê-lo do índice com `git rm --cached caminho-do-arquivo` e depois criar um commit.
+
+## Começo rápido
+
+Requisitos: Python 3.11 ou superior e Git.
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -e ".[dev]"
+pytest
+```
+
+Depois:
+
+1. abra `docs/plano_de_estudo_data_science_itau.docx`;
+2. preencha o diagnóstico em `study/LEARNING_LOG.md`;
+3. acompanhe a primeira semana em `study/ROADMAP.md`;
+4. consulte `docs/GITHUB_GUIDE.md` durante o uso do Git;
+5. consulte `docs/PYTHON_DATA_SCIENCE_GUIDE.md` durante os exercícios;
+6. use `docs/REFERENCIAS_REPOSITORIOS.md` para selecionar referências sem copiar soluções.
+
+## Fluxo recomendado
+
+1. Defina uma pergunta de aprendizagem ou negócio.
+2. Registre a fonte e a licença dos dados.
+3. Explore e documente a análise em um notebook.
+4. Mova funções reutilizáveis para `src/nexo_dados`.
+5. Adicione testes em `tests`.
+6. Atualize o README do projeto e o diário de aprendizagem.
+7. Revise `git status` antes de qualquer commit.
+
+## Princípios do portfólio
+
+1. Cada projeto começa com uma pergunta de negócio e termina com uma recomendação.
+2. Dados sensíveis, credenciais e arquivos grandes nunca entram no Git.
+3. Notebooks servem à exploração; funções reutilizáveis ficam em `src` e recebem testes.
+4. Resultados devem ser reproduzíveis a partir de instruções claras.
+5. Toda conclusão deve informar limitações, riscos e próximos passos.
+6. Qualidade e profundidade importam mais que quantidade de projetos.
+
+## Licença
+
+Código e documentação sob a licença MIT, salvo indicação diferente na fonte dos dados.

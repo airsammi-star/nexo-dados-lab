@@ -41,6 +41,7 @@ Guarda os conjuntos de dados usados nas análises. A pasta `raw` recebe o arquiv
 Centraliza documentos de consulta que valem para todo o laboratório:
 
 - `plano_de_estudo_data_science_itau.docx`: plano inicial de 16 semanas;
+- `caderno_estatistica_basica.docx`: caderno editável de estatística descritiva;
 - `GITHUB_GUIDE.md`: Git e GitHub do básico ao intermediário;
 - `PYTHON_DATA_SCIENCE_GUIDE.md`: funções e padrões essenciais de Python para dados;
 - `REFERENCIAS_REPOSITORIOS.md`: catálogo comentado de repositórios públicos para estudo e inspiração.
@@ -72,6 +73,8 @@ Organiza o processo de aprendizagem:
 
 - `ROADMAP.md`: sequência inicial de assuntos e entregas;
 - `LEARNING_LOG.md`: diário para registrar estudo, evidência, dúvidas e próxima ação.
+- `TRILHA_TECNICA_ITAU.md`: conceitos técnicos esperados e critérios de domínio;
+- `EXERCISE_BACKLOG.md`: exercícios práticos organizados por tema.
 
 ### `tests`
 
@@ -126,9 +129,16 @@ Depois:
 1. abra `docs/plano_de_estudo_data_science_itau.docx`;
 2. preencha o diagnóstico em `study/LEARNING_LOG.md`;
 3. acompanhe a primeira semana em `study/ROADMAP.md`;
-4. consulte `docs/GITHUB_GUIDE.md` durante o uso do Git;
-5. consulte `docs/PYTHON_DATA_SCIENCE_GUIDE.md` durante os exercícios;
-6. use `docs/REFERENCIAS_REPOSITORIOS.md` para selecionar referências sem copiar soluções.
+4. escolha um exercício em `study/EXERCISE_BACKLOG.md` e copie `notebooks/00_template_estudo.ipynb`;
+5. consulte `docs/GITHUB_GUIDE.md` durante o uso do Git;
+6. consulte `docs/PYTHON_DATA_SCIENCE_GUIDE.md` durante os exercícios;
+7. use `docs/REFERENCIAS_REPOSITORIOS.md` para selecionar referências sem copiar soluções.
+
+Para instalar também XGBoost e LightGBM quando chegar aos modelos avançados:
+
+```powershell
+python -m pip install -e ".[dev,ml-advanced]"
+```
 
 ## Fluxo recomendado
 
